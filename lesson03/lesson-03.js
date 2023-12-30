@@ -3,4 +3,6 @@ let screensValue = 'шаблонные, с уникальным дизайном
 let screenPrice = 10000
 let percentage = 90
 let fullPrice = 5000
-let responsive: true
+let responsive = true
+
+console.log(titleProject)
