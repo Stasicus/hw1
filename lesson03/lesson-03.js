@@ -1,28 +1,5 @@
-// let titleProject = 'Оценка стоимости'
-// let screensValue = 'шаблонные, с уникальным дизайном, с анимациями'
 let screenPrice = 10000
-// let percentage = 90
-// let fullPrice = 5000
-// let responsive = true
-
-// console.log(titleProject)
-
-// let x = 11;
-// if (x > 10) {
-//     console.log('Условие верно');
-// } else {
-//     console.log('Условие не верно');
-// }
-
-// let a = 5;
-// let b = '10'
-// let res = a + + b
-
-// console.log(a.toString())
-// console.log(res);
-// console.log(a + b);
-
-// alert('Привет')
+let percentage = 10
 
 let titleProject = prompt('Название проекта')
 console.log(titleProject)
@@ -52,9 +29,15 @@ console.log(servicePrice2)
 let fullPrice = screenPrice + + servicePrice1 + + servicePrice2;
 console.log("Итоговая сумма:", fullPrice);
 
-let servicePercentPrice = fullPrice - (fullPrice * 0.1);
+
+let persentResult = +(fullPrice * (percentage / 100))
+console.log("Процент партнеру: ", persentResult);
+
+
+let servicePercentPrice = fullPrice - persentResult;
 let roundedServicePercentPrice = Math.round(servicePercentPrice);
 console.log("Итоговая сумма за вычитом комиссии партнеру:", servicePercentPrice);
+
 
 
 if (fullPrice > 50000) {
@@ -69,3 +52,32 @@ if (fullPrice > 50000) {
     console.log("Что-то пошло не так");
 }
 
+// let titleProject = 'Оценка стоимости'
+// let screensValue = 'шаблонные, с уникальным дизайном, с анимациями'
+
+// let fullPrice = 5000
+// let responsive = true
+
+// console.log(titleProject)
+
+// let x = 11;
+// if (x > 10) {
+//     console.log('Условие верно');
+// } else {
+//     console.log('Условие не верно');
+// }
+
+// let a = 5;
+// let b = '10'
+// let res = a + + b
+
+// console.log(a.toString())
+// console.log(res);
+// console.log(a + b);
+
+// alert('Привет')
+
+
+// let servicePercentPrice = fullPrice - (fullPrice * 0.1);
+// let roundedServicePercentPrice = Math.round(servicePercentPrice);
+// console.log("Итоговая сумма за вычитом комиссии партнеру:", servicePercentPrice);
