@@ -4,7 +4,6 @@ let percentage = 10
 let allServicePrices;
 let titleProject2;
 let fullPrice2;
-// let persentResult;
 let titleProject;
 let screensValue;
 let responsive;
@@ -25,40 +24,7 @@ const asking = function () {
 
 }
 
-service1 = prompt('Какой сервис нужен?')
-servicePrice1 = +prompt('Сколько это будет стоить?')
-service2 = prompt('Какой еще сервис тебе нужен?')
-servicePrice2 = +prompt('Сколько будет стоить этот второй сервис?')
 
-
-
-// ---- 2 ЕСЛИ ЧТО ВКЛЮЧИТЬ
-// fullPrice = screenPrice + + servicePrice1 + + servicePrice2;
-// console.log("Итоговая сумма:", fullPrice);
-
-
-
-// ---- 1ЕСЛИ ЧТО ВКЛЮЧИТЬ
-// persentResult = +(fullPrice * (percentage / 100))
-// console.log("Процент партнеру: ", persentResult);
-
-// servicePercentPrice = fullPrice - persentResult;
-// roundedServicePercentPrice = Math.round(servicePercentPrice);
-// console.log("Итоговая сумма за вычитом комиссии партнеру:", servicePercentPrice);
-
-
-
-if (fullPrice > 50000) {
-    console.log("Сделаем скидку 10%");
-} else if (fullPrice > 20000 && fullPrice <= 40000) {
-    console.log("Сделаем скидку 5%");
-} else if (fullPrice > 0 && fullPrice <= 20000) {
-    console.log("Скидка не предусмотрена");
-} else if (fullPrice === 0 || fullPrice === 20000 || fullPrice === 50000) {
-    console.log("Абракадабра");
-} else {
-    console.log("Что-то пошло не так");
-}
 
 
 
@@ -89,13 +55,12 @@ const getAllServicePrices = function () {
 }
 
 
-getAllServicePrices(servicePrice1, servicePrice2);
-alert(allServicePrices);
+// getAllServicePrices(servicePrice1, servicePrice2);
+// alert(allServicePrices);
 
 function getFullPrice(screenPrice, allServicePrices) {
     return screenPrice + allServicePrices;
 }
-
 
 
 /// FUNCTION С МОДИФИКАЦИЕЙ
@@ -116,16 +81,8 @@ const getServicePercentPrices = function () {
 }
 
 
-// ---- 1 ЕСЛИ ЧТО ВКЛЮСИТЬ
-// function getServicePercentPrices() {
-//     return servicePercentPrice;
-// }
-
-
-
 let servicePercentPrice2 = getServicePercentPrices(servicePercentPrice);
 console.log('Возврат итоговой стоимости с учетом процента подрядчику', servicePercentPrice);
-// alert(servicePercentPrice);
 
 
 /// FUNCTION showTypeOf
@@ -161,6 +118,20 @@ asking()
 allServicePrices = getAllServicePrices()
 fullPrice2 = getFullPrice(screenPrice, allServicePrices);
 alert(fullPrice2);
+
+
+if (fullPrice > 50000) {
+    console.log("Сделаем скидку 10%");
+} else if (fullPrice > 20000 && fullPrice <= 40000) {
+    console.log("Сделаем скидку 5%");
+} else if (fullPrice > 0 && fullPrice <= 20000) {
+    console.log("Скидка не предусмотрена");
+} else if (fullPrice === 0 || fullPrice === 20000 || fullPrice === 50000) {
+    console.log("Абракадабра");
+} else {
+    console.log("Что-то пошло не так");
+}
+
 
 
 console.log(titleProject);
