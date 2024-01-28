@@ -3,7 +3,6 @@ let screenPrice = 10000
 let percentage = 10
 let allServicePrices;
 let titleProject2;
-let fullPrice2;
 let titleProject;
 let screensValue;
 let responsive;
@@ -21,11 +20,7 @@ const asking = function () {
     titleProject = prompt('Название проекта')
     screensValue = prompt('шаблонные, с уникальным дизайном, с анимациями?')
     responsive = prompt('нужен ли респонсивный сайт??', '')
-
 }
-
-
-
 
 
 
@@ -55,9 +50,6 @@ const getAllServicePrices = function () {
 }
 
 
-// getAllServicePrices(servicePrice1, servicePrice2);
-// alert(allServicePrices);
-
 function getFullPrice(screenPrice, allServicePrices) {
     return screenPrice + allServicePrices;
 }
@@ -72,38 +64,36 @@ function getTitle(titleProject) {
     }
 }
 titleProject2 = getTitle(titleProject);
-alert(titleProject2)
+// alert(titleProject2)
 
 
 // ---- 1 ЕСЛИ ЧТО ОТКЛЮЧИТЬ
-const getServicePercentPrices = function () {
-    return fullPrice - (fullPrice * percentage / 100)
-}
+const getServicePercentPrices = function (price, percentage) {
+    return price - (price * percentage / 100);
+};
 
 
-let servicePercentPrice2 = getServicePercentPrices(servicePercentPrice);
-console.log('Возврат итоговой стоимости с учетом процента подрядчику', servicePercentPrice);
+let servicePercentPrice2 = getServicePercentPrices(fullPrice, percentage);
+console.log('Возврат итоговой стоимости с учетом процента подрядчику', servicePercentPrice2);
 
+servicePercentPrice = getServicePercentPrices(fullPrice, percentage);
+getRollbackMessage(servicePercentPrice, percentage);
 
-/// FUNCTION showTypeOf
-function showTypeOf(screensValue) {
-    return screensValue;
-}
-let screensValue2 = showTypeOf(screensValue);
-console.log('Cтроки с типами экранов для разработки', screensValue);
 
 
 //// СООБЩЕНИЕ О СКИДКЕ
-function getRollbackMessage(getServicePercentPrices) {
-    let servicePercentPriceValue = getServicePercentPrices();
+function getRollbackMessage(price, percentage) {
+    let servicePercentPriceValue = getServicePercentPrices(price, percentage);
 
     if (servicePercentPriceValue > 50000) {
         return "Сделаем скидку 10%";
+    } else if (servicePercentPriceValue > 40000 && servicePercentPriceValue <= 50000) {
+        return "Сделаем скидку 8%";
     } else if (servicePercentPriceValue > 20000 && servicePercentPriceValue <= 40000) {
         return "Сделаем скидку 5%";
     } else if (servicePercentPriceValue > 0 && servicePercentPriceValue <= 20000) {
         return "Скидка не предусмотрена";
-    } else if (servicePercentPriceValue === 0 || servicePercentPriceValue === 20000 || servicePercentPriceValue === 50000) {
+    } else if (servicePercentPriceValue === 0 || servicePercentPriceValue === 20000 || servicePercentPriceValue === 40000 || servicePercentPriceValue === 50000) {
         return "Абракадабра";
     } else {
         return "Что-то пошло не так";
@@ -111,27 +101,15 @@ function getRollbackMessage(getServicePercentPrices) {
 }
 
 console.log('Сообщение о скидке :', getRollbackMessage(getServicePercentPrices));
-alert(getRollbackMessage(getServicePercentPrices));
 
 
-asking()
-allServicePrices = getAllServicePrices()
-fullPrice2 = getFullPrice(screenPrice, allServicePrices);
-alert(fullPrice2);
+asking();
+allServicePrices = getAllServicePrices();
+fullPrice = getFullPrice(screenPrice, allServicePrices);
+alert(fullPrice);
 
-
-if (fullPrice > 50000) {
-    console.log("Сделаем скидку 10%");
-} else if (fullPrice > 20000 && fullPrice <= 40000) {
-    console.log("Сделаем скидку 5%");
-} else if (fullPrice > 0 && fullPrice <= 20000) {
-    console.log("Скидка не предусмотрена");
-} else if (fullPrice === 0 || fullPrice === 20000 || fullPrice === 50000) {
-    console.log("Абракадабра");
-} else {
-    console.log("Что-то пошло не так");
-}
-
+servicePercentPrice = getServicePercentPrices(fullPrice, percentage);
+getRollbackMessage(fullPrice, percentage);
 
 
 console.log(titleProject);
@@ -141,4 +119,3 @@ console.log(service1);
 console.log(servicePrice1);
 console.log(service2);
 console.log(servicePrice2);
-// console.log(Math.ceil(servicePercentPrice));
