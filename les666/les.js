@@ -1,4 +1,6 @@
 "use strict"
+// 29.10.2024 //
+
 let unknownNum = 3
 let txtNum = ''
 let tries = 3
